@@ -1,0 +1,17 @@
+Let's use antd(ant design) within vite:
+
+    1) npm install antd --save
+
+    2)
+    import { Button } from 'antd';
+    const MyComponent = () => (
+    <div>
+        <Button type="primary">Button</Button>
+    </div>
+    );
+
+    export default MyComponent;
+
+-----------------------------------------------------------
+
+https://rapidapi.com/topapi-topapi-default/api/cryptocurrency-news2
