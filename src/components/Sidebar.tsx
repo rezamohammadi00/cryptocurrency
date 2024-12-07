@@ -23,7 +23,7 @@ const items: MenuProps["items"] = [
 const Sidebar = () => {
     return (
         <Layout.Sider width={"18%"} className="min-h-screen !min-w-60">
-            <div className="flex items-center gap-2 p-3">
+            <div className="flex gap-2 items-center p-3">
                 <Avatar size={64} src="https://i.ibb.co/Z11pcGG/cryptocurrency.png"/>
                 <Typography.Title level={4} style={{color: "white"}}>
                     Cryptocurrency
@@ -33,7 +33,7 @@ const Sidebar = () => {
             <Menu
                 theme="dark"
                 mode="vertical"
-                defaultSelectedKeys={["2"]}
+                defaultSelectedKeys={["1"]}
                 items={items}
             />
         </Layout.Sider>

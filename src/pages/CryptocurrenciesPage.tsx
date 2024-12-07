@@ -18,7 +18,7 @@ type  coin = {
 
 
 const CryptocurrenciesPage = () => {
-    const {data} = useGetCoins();
+    const {data,isLoading} = useGetCoins();
     const coins: coin[] = data?.data?.coins;
 
     const [filteredCryptocurrencies, setFilteredCryptocurrencies] = useState(coins)
@@ -29,6 +29,15 @@ const CryptocurrenciesPage = () => {
             return coin.name.toLowerCase().includes(searchingText.toLowerCase())
         }))
     }, [coins,searchingText]);
+
+
+    if (isLoading) {
+        return (
+          <div className="flex justify-center items-center w-full h-full">
+            Loading...
+          </div>
+        );
+      }
 
     return (
         <Layout.Content className="p-4">
