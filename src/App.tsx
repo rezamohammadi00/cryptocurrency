@@ -8,9 +8,9 @@ function App() {
   const router = useRoutes(routes);
 
   return (
-    <Layout>
+    <Layout className="overflow-hidden min-h-screen max-h-screen">
       <Sidebar />
-      {router}
+      <div>{router}</div>
     </Layout>
   );
 }

@@ -30,7 +30,12 @@ const HomePage = () => {
   // console.log(data)
   // console.log(coins)
 
-  if (isLoading) return <div className="flex justify-center items-center w-full h-full">Loading...</div>;
+  if (isLoading)
+    return (
+      <div className="flex justify-center items-center w-full h-full">
+        Loading...
+      </div>
+    );
   return (
     <Layout.Content className="p-4">
       {/*Global Crypto Stats section*/}

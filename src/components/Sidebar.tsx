@@ -22,7 +22,7 @@ const items: MenuProps["items"] = [
 
 const Sidebar = () => {
     return (
-        <Layout.Sider width={"18%"} className="min-h-screen !min-w-60">
+        <Layout.Sider width={"18%"} className="min-h-screen !min-w-60 hidden lg:flex">
             <div className="flex gap-2 items-center p-3">
                 <Avatar size={64} src="https://i.ibb.co/Z11pcGG/cryptocurrency.png"/>
                 <Typography.Title level={4} style={{color: "white"}}>

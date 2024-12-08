@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { Layout, Typography, Row, Col, Card } from "antd";
 import useGetNews from "../hooks/useGetNews";
 
-const { Content } = Layout;
 const { Title } = Typography;
 
 const NewsPage = () => {
@@ -23,7 +22,7 @@ const NewsPage = () => {
   }
 
   return (
-    <Content className="p-4 w-full">
+    <Layout.Content className="overflow-y-scroll p-4 w-full h-full">
       <Title level={2}>News</Title>
       <Row gutter={[32, 32]} className="mt-3">
         {data?.data.map(
@@ -67,7 +66,7 @@ const NewsPage = () => {
           )
         )}
       </Row>
-    </Content>
+    </Layout.Content>
   );
 };
 
