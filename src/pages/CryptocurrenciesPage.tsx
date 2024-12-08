@@ -40,7 +40,7 @@ const CryptocurrenciesPage = () => {
       }
 
     return (
-        <Layout.Content className="p-4">
+        <Layout.Content className="overflow-y-scroll p-4 w-full h-full">
             <div className={"flex justify-between items-center"}>
                 <Typography.Title level={2}>Cryptos</Typography.Title>
                 <Input.Search size={"middle"} placeholder="Search Cryptocurrency" className={"w-52"} onSearch={setSearchingText}/>

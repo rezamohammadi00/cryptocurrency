@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Layout, Typography, Row, Col, Card } from "antd";
 import useGetNews from "../hooks/useGetNews";
+import Loader from "../components/Loader";
 
 const { Title } = Typography;
 
@@ -13,13 +14,9 @@ const NewsPage = () => {
     }
   }, [data]);
 
-  if (isLoading) {
-    return (
-      <div className="flex justify-center items-center w-full h-full">
-        Loading...
-      </div>
-    );
-  }
+  if (isLoading) return <Loader />;
+
+  // console.log(data?.data + "sss");
 
   return (
     <Layout.Content className="overflow-y-scroll p-4 w-full h-full">

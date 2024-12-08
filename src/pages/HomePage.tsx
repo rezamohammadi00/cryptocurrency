@@ -4,6 +4,7 @@ import { Col, Layout, Row, Statistic, Typography } from "antd";
 import useGetCoins from "../hooks/useGetCoins.ts";
 import Card from "../components/Card";
 import { Link } from "react-router-dom";
+import Loader from "../components/Loader.tsx";
 
 const formatValue = (value: number, title: string = "") => {
   const isCurrency =
@@ -30,14 +31,9 @@ const HomePage = () => {
   // console.log(data)
   // console.log(coins)
 
-  if (isLoading)
-    return (
-      <div className="flex justify-center items-center w-full h-full">
-        Loading...
-      </div>
-    );
+  if (isLoading) return <Loader />;
   return (
-    <Layout.Content className="p-4">
+    <Layout.Content className="overflow-y-scroll p-4 w-full h-full">
       {/*Global Crypto Stats section*/}
       <Typography.Title level={2}>Global Crypto Stats</Typography.Title>
       <Row gutter={[16, 20]} className="mt-3">
