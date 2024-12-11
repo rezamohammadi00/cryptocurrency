@@ -10,11 +10,11 @@ const items: MenuProps["items"] = [
     key: "2",
     label: <Link to="/cryptocurrencies">Cryptocurrencies</Link>,
   },
-  // ,
-  // {
-  //     key: "3",
-  //     label: <Link to="/exchanges">Exchanges</Link>,
-  // }
+
+  {
+    key: "3",
+    label: <Link to="/exchanges">Exchanges</Link>,
+  },
   {
     key: "4",
     label: <Link to="/news">News</Link>,
