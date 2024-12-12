@@ -1,8 +1,10 @@
 import { Dropdown, Menu, MenuProps, Space } from "antd";
+import { memo } from "react";
 import { Link } from "react-router-dom";
 import HamburgerIcon from "./HamburgerIcon";
 
-const items: MenuProps["items"] = [
+// Define menu items outside the component for better reusability and separation of concerns.
+const dropdownItems: MenuProps["items"] = [
   {
     label: (
       <Link to="/" rel="noopener noreferrer">
@@ -29,27 +31,26 @@ const items: MenuProps["items"] = [
   },
 ];
 
-const MenuDemo = () => {
+const MenuDemo = memo(() => {
+  // Define menu items for the main menu.
   const menuItems: MenuProps["items"] = [
     {
       key: "hamburger",
       label: (
-        <div>
-          <Dropdown
-            menu={{ items }}
-            trigger={["click"]}
-            placement="bottomRight"
-            arrow={{ pointAtCenter: true }}
-          >
-            <a onClick={(e) => e.preventDefault()}>
-              <Space>
-                <div className="bg-black">
-                  <HamburgerIcon />
-                </div>
-              </Space>
-            </a>
-          </Dropdown>
-        </div>
+        <Dropdown
+          menu={{ items: dropdownItems }}
+          trigger={["click"]}
+          placement="bottomRight"
+          arrow={{ pointAtCenter: true }}
+        >
+          <a onClick={(e) => e.preventDefault()}>
+            <Space>
+              <div className="flex justify-center items-center bg-black">
+                <HamburgerIcon />
+              </div>
+            </Space>
+          </a>
+        </Dropdown>
       ),
     },
   ];
@@ -58,7 +59,7 @@ const MenuDemo = () => {
     <Menu
       theme="dark"
       mode="horizontal"
-      defaultSelectedKeys={[""]}
+      defaultSelectedKeys={[]}
       items={menuItems}
       style={{
         flex: 1,
@@ -69,6 +70,6 @@ const MenuDemo = () => {
       }}
     />
   );
-};
+});
 
 export default MenuDemo;
