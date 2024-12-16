@@ -1,9 +1,9 @@
-import React, { lazy } from "react";
+import { lazy } from "react";
 
 const HomePage = lazy(() => import("./src/pages/HomePage"));
 const NewsPage = lazy(() => import("./src/pages/NewsPage"));
-const CryptocurrenciesPage = lazy(() =>
-  import("./src/pages/CryptocurrenciesPage")
+const CryptocurrenciesPage = lazy(
+  () => import("./src/pages/CryptocurrenciesPage")
 );
 const ExchangesPage = lazy(() => import("./src/pages/ExchangesPage"));
 
