@@ -6,6 +6,7 @@ import Card from "../components/Card";
 import { Link } from "react-router-dom";
 import Loader from "../components/Loader.tsx";
 import useGetFontSize from "../hooks/useGetFontSize.ts";
+import Error from "../components/Error.tsx";
 
 const formatValue = (value: number, title: string = "") => {
   const isCurrency =
@@ -26,16 +27,18 @@ type coin = {
 };
 
 const HomePage = () => {
-  const { data, isLoading } = useGetCoins();
+  const { data, isLoading, error } = useGetCoins();
   const stats = data?.data?.stats;
   const coins: coin[] = data?.data?.coins;
   const fontSize = useGetFontSize();
-  
+
   const screens = Grid.useBreakpoint();
   // console.log(data)
   // console.log(coins)
 
   if (isLoading) return <Loader />;
+  if (error) return <Error error={error} />;
+
   return (
     <Layout.Content className="overflow-y-scroll p-4 w-full h-full">
       {/*Global Crypto Stats section*/}
@@ -52,7 +55,7 @@ const HomePage = () => {
                 title={key}
                 value={value as number}
                 formatter={(val) => formatValue(val as number, key)}
-                valueStyle={{ fontSize: screens.sm ? "18px" : "14px"}}
+                valueStyle={{ fontSize: screens.sm ? "18px" : "14px" }}
               />
             </Col>
           ))}

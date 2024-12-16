@@ -6,6 +6,7 @@ import millify from "millify";
 import useGetCoins from "../hooks/useGetCoins.ts";
 import Card from "../components/Card.tsx";
 import Loader from "../components/Loader.tsx";
+import Error from "../components/Error.tsx";
 
 type Coin = {
   uuid: string;
@@ -17,7 +18,7 @@ type Coin = {
 };
 
 const CryptocurrenciesPage = () => {
-  const { data, isLoading } = useGetCoins();
+  const { data, isLoading, error } = useGetCoins();
   const coins: Coin[] = data?.data?.coins || [];
 
   const [filteredCryptocurrencies, setFilteredCryptocurrencies] =
@@ -34,12 +35,15 @@ const CryptocurrenciesPage = () => {
 
   // Render a loading state
   if (isLoading) return <Loader />;
+  if (error) return <Error error={error} />;
 
   return (
     <Layout.Content className="overflow-y-scroll p-4 w-full h-full">
       {/* Header Section */}
       <div className="flex justify-between items-center">
-        <Typography.Title level={2} className="">Cryptos</Typography.Title>
+        <Typography.Title level={2} className="">
+          Cryptos
+        </Typography.Title>
         <Input.Search
           size="middle"
           placeholder="Search Cryptocurrency"

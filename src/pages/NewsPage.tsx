@@ -2,15 +2,14 @@ import { useEffect } from "react";
 import { Layout, Typography, Row, Col, Card } from "antd";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
-
 import useGetNews from "../hooks/useGetNews";
 import Loader from "../components/Loader";
-
+import Error from "../components/Error";
 
 const { Title } = Typography;
 
 const NewsPage = () => {
-  const { data, isLoading } = useGetNews();
+  const { data, isLoading, error } = useGetNews();
 
   useEffect(() => {
     if (data?.data) {
@@ -19,8 +18,7 @@ const NewsPage = () => {
   }, [data]);
 
   if (isLoading) return <Loader />;
-
-  // console.log(data?.data + "sss");
+  if (error) return <Error error={error} />;
 
   return (
     <Layout.Content className="overflow-y-scroll p-4 w-full h-full">
@@ -52,13 +50,13 @@ const NewsPage = () => {
                     //   className="object-cover w-full h-40"
                     // />
                     <LazyLoadImage
-                    src={news.thumbnail} // Your image source
-                    alt="Image"
-                    effect="blur" // Add a blur effect while loading
-                    width="100%"
-                    height="160"
-                    className="object-cover w-full h-40"
-                  />
+                      src={news.thumbnail} // Your image source
+                      alt="Image"
+                      effect="blur" // Add a blur effect while loading
+                      width="100%"
+                      height="160"
+                      className="object-cover w-full h-40"
+                    />
                   }
                   className="h-[350px]"
                 >
