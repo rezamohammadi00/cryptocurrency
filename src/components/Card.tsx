@@ -1,4 +1,4 @@
-import { Card as CardAntd, Avatar, Typography } from "antd";
+import { Card as CardAntd, Typography } from "antd";
 
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
