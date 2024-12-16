@@ -1,5 +1,7 @@
 import { Card as CardAntd, Avatar, Typography } from "antd";
 
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
 type CardProps = {
   title: string;
   avatarSrc: string;
@@ -10,7 +12,20 @@ type CardProps = {
 
 const Card = ({ title, marketCap, avatarSrc, price, change }: CardProps) => {
   return (
-    <CardAntd title={title} extra={<Avatar src={avatarSrc} />} hoverable>
+    <CardAntd
+      title={title}
+      extra={
+        <LazyLoadImage
+          src={avatarSrc} // Your image source
+          alt="image-crypto"
+          effect="blur" // Add a blur effect while loading
+          width="30"
+          height="30"
+          className="rounded-full"
+        />
+      }
+      hoverable
+    >
       <Typography.Paragraph type="secondary">
         Price: {price}
       </Typography.Paragraph>

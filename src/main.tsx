@@ -7,6 +7,7 @@ import { StyleProvider } from "@ant-design/cssinjs";
 
 import App from "./App.tsx";
 import "./styles/index.css";
+import "react-lazy-load-image-component/src/effects/blur.css"; // for the react-lazy-load-image-component package
 
 // Wait for the DOM to load and remove the loader
 const removeLoader = () => {

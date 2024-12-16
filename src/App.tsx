@@ -3,6 +3,7 @@ import { useRoutes } from "react-router-dom";
 
 import routes from "../routes.tsx";
 import { Sidebar, Topbar } from "./components";
+import { Suspense } from "react";
 
 function App() {
   const router = useRoutes(routes);
@@ -12,7 +13,9 @@ function App() {
       <Topbar />
       <Layout>
         <Sidebar />
-        <div>{router}</div>
+        <Suspense fallback={<div className="p-4">Loading...</div>}>
+          <div>{router}</div>
+        </Suspense>
       </Layout>
     </Layout>
   );

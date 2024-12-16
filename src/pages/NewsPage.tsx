@@ -1,7 +1,11 @@
 import { useEffect } from "react";
 import { Layout, Typography, Row, Col, Card } from "antd";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
+
 import useGetNews from "../hooks/useGetNews";
 import Loader from "../components/Loader";
+
 
 const { Title } = Typography;
 
@@ -42,11 +46,19 @@ const NewsPage = () => {
                 <Card
                   hoverable
                   cover={
-                    <img
-                      alt={news.title}
-                      src={news.thumbnail}
-                      className="object-cover w-full h-40"
-                    />
+                    // <img
+                    //   alt={news.title}
+                    //   src={news.thumbnail}
+                    //   className="object-cover w-full h-40"
+                    // />
+                    <LazyLoadImage
+                    src={news.thumbnail} // Your image source
+                    alt="Image"
+                    effect="blur" // Add a blur effect while loading
+                    width="100%"
+                    height="160"
+                    className="object-cover w-full h-40"
+                  />
                   }
                   className="h-[350px]"
                 >

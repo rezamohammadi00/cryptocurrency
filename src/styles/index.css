@@ -11,6 +11,6 @@ body{
 }
 
 :where(.css-dev-only-do-not-override-14i19y2).ant-menu-dark.ant-menu-horizontal >.ant-menu-item-selected, :where(.css-dev-only-do-not-override-14i19y2).ant-menu-dark>.ant-menu.ant-menu-horizontal >.ant-menu-item-selected, :where(.css-dev-only-do-not-override-14i19y2).ant-menu-dark.ant-menu-horizontal >.ant-menu-submenu-selected, :where(.css-dev-only-do-not-override-14i19y2).ant-menu-dark>.ant-menu.ant-menu-horizontal >.ant-menu-submenu-selected {
-    color: #fff;
-    background-color: #001529;
+    color: #fff ! important;
+    background-color: transparent ! important;
 }   

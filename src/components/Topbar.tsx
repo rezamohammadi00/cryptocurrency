@@ -1,5 +1,7 @@
-import { Avatar, Layout, Typography } from "antd";
+import { Layout, Typography } from "antd";
 import React, { memo } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
 import Menu from "./Menu";
 
 // Memoized Topbar Component
@@ -7,13 +9,15 @@ const Topbar: React.FC = memo(() => {
   console.log("Topbar rendered");
 
   return (
-    <Layout.Header className="flex items-center lg:hidden">
-      <div className="flex items-center">
-        <Avatar
-          size={40}
-          src="https://i.ibb.co/Z11pcGG/cryptocurrency.png"
-          className="mr-2 demo-log"
-          style={{ marginLeft: "-30px" }}
+    <Layout.Header className="flex items-center lg:hidden justify-between -mx-5">
+      <div className="flex items-center h-full">
+        <LazyLoadImage
+          src={"https://i.ibb.co/Z11pcGG/cryptocurrency.png"} // Your image source
+          alt="Logo"
+          effect="blur" // Add a blur effect while loading
+          width="45"
+          height="45"
+          className="rounded-full -ml-1"
         />
         <Typography.Title
           level={4}
@@ -23,7 +27,9 @@ const Topbar: React.FC = memo(() => {
         </Typography.Title>
       </div>
 
-      <Menu />
+      <div className="mt-3">
+        <Menu />
+      </div>
     </Layout.Header>
   );
 });

@@ -3,7 +3,6 @@ import { memo } from "react";
 import { Link } from "react-router-dom";
 import HamburgerIcon from "./HamburgerIcon";
 
-// Define menu items outside the component for better reusability and separation of concerns.
 const dropdownItems: MenuProps["items"] = [
   {
     label: (
@@ -32,7 +31,6 @@ const dropdownItems: MenuProps["items"] = [
 ];
 
 const MenuDemo = memo(() => {
-  // Define menu items for the main menu.
   const menuItems: MenuProps["items"] = [
     {
       key: "hamburger",
@@ -42,10 +40,15 @@ const MenuDemo = memo(() => {
           trigger={["click"]}
           placement="bottomRight"
           arrow={{ pointAtCenter: true }}
+          overlayClassName="custom-dropdown-overlay"
+          overlayStyle={{
+            backgroundColor: "transparent",
+            width:"75%"
+          }}
         >
-          <a onClick={(e) => e.preventDefault()}>
+          <a onClick={(e) => e.preventDefault()} style={{ color: "white" }}>
             <Space>
-              <div className="flex justify-center items-center bg-black">
+              <div className="flex justify-center items-center">
                 <HamburgerIcon />
               </div>
             </Space>
