@@ -21,3 +21,5 @@ https://rapidapi.com/topapi-topapi-default/api/cryptocurrency-news2
 shift+alt+o
 
 -------------------------------------------------------------------
+
+"@types/react-lazy-load-image-component": "^1.6.4"  ->devdep // for the react-lazy-load-image-component package

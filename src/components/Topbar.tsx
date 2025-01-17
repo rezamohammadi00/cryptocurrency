@@ -1,6 +1,5 @@
 import { Layout, Typography } from "antd";
 import React, { memo } from "react";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 
 import Menu from "./Menu";
 
@@ -11,13 +10,10 @@ const Topbar: React.FC = memo(() => {
   return (
     <Layout.Header className="flex items-center lg:hidden justify-between -mx-5">
       <div className="flex items-center h-full">
-        <LazyLoadImage
-          src={"https://i.ibb.co/Z11pcGG/cryptocurrency.png"} // Your image source
+        <img
+          src="https://i.ibb.co/Z11pcGG/cryptocurrency.png" // Your image source
           alt="Logo"
-          effect="blur" // Add a blur effect while loading
-          width="45"
-          height="45"
-          className="rounded-full -ml-1"
+          className="rounded-full -ml-1 w-[45px] h-[45px]"
         />
         <Typography.Title
           level={4}
