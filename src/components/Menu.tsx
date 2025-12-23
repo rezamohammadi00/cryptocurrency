@@ -14,11 +14,19 @@ const dropdownItems: MenuProps["items"] = [
   },
   {
     label: (
+      <Link to="/about" rel="noopener noreferrer">
+        About
+      </Link>
+    ),
+    key: "1",
+  },
+  {
+    label: (
       <Link to="/cryptocurrencies" rel="noopener noreferrer">
         Cryptocurrencies
       </Link>
     ),
-    key: "1",
+    key: "2",
   },
   {
     label: (
@@ -26,7 +34,7 @@ const dropdownItems: MenuProps["items"] = [
         News
       </Link>
     ),
-    key: "2",
+    key: "3",
   },
 ];
 

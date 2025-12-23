@@ -8,6 +8,10 @@ const items: MenuProps["items"] = [
   },
   {
     key: "2",
+    label: <Link to="/about">About</Link>,
+  },
+  {
+    key: "3",
     label: <Link to="/cryptocurrencies">Cryptocurrencies</Link>,
   },
 
