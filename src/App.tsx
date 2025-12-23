@@ -14,7 +14,7 @@ function App() {
       <Layout>
         <Sidebar />
         <Suspense fallback={<div className="p-4">Loading...</div>}>
-          <div>{router}</div>
+          <div className="w-full">{router}</div>
         </Suspense>
       </Layout>
     </Layout>
