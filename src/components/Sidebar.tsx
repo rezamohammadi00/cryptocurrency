@@ -1,32 +1,30 @@
+import { Link, useLocation } from "react-router-dom";
 import { Menu, MenuProps, Avatar, Typography, Layout } from "antd";
-import { Link } from "react-router-dom";
 
 const items: MenuProps["items"] = [
   {
-    key: "1",
+    key: "/",
     label: <Link to="/">Home</Link>,
   },
   {
-    key: "2",
-    label: <Link to="/about">About</Link>,
-  },
-  {
-    key: "3",
+    key: "/cryptocurrencies",
     label: <Link to="/cryptocurrencies">Cryptocurrencies</Link>,
   },
-
-  // {
-  //   key: "3",
-  //   label: <Link to="/exchanges">Exchanges</Link>,
-  // },
   {
-    key: "4",
+    key: "/news",
     label: <Link to="/news">News</Link>,
+  },
+  {
+    key: "/about",
+    label: <Link to="/about">About</Link>,
   },
 ];
 
 const Sidebar = () => {
-  return (
+  const location = useLocation();
+  const currentPath = location.pathname;
+
+    return (
     <Layout.Sider
       width={"18%"}
       className="min-h-screen !min-w-60 hidden lg:flex"
@@ -41,7 +39,8 @@ const Sidebar = () => {
       <Menu
         theme="dark"
         mode="vertical"
-        defaultSelectedKeys={["1"]}
+        defaultSelectedKeys={["/"]}
+        selectedKeys={[currentPath]}
         items={items}
       />
     </Layout.Sider>

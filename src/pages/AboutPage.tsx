@@ -62,11 +62,11 @@ const AboutPage = () => {
 
         <section className="grid grid-cols-1 lg:grid-cols-3 gap-4">
           {designPillars.map((pillar) => (
-            <Card key={pillar.title} className="h-full" bordered={false}>
-              <Typography.Title level={4} className="!mb-2">
+            <Card key={pillar.title} className="h-full bg-[#162441]" bordered={false} >
+              <Typography.Title level={4} className="!mb-2 text-white">
                 {pillar.title}
               </Typography.Title>
-              <Typography.Paragraph className="!mb-0 text-gray-600">
+              <Typography.Paragraph className="!mb-0 text-gray-200">
                 {pillar.description}
               </Typography.Paragraph>
             </Card>
@@ -108,7 +108,7 @@ const AboutPage = () => {
             />
           </div>
 
-          <Card bordered={false} className="bg-gradient-to-br from-blue-500/20 to-purple-500/20">
+          <Card bordered={false} className="bg-gradient-to-br from-blue-500/20 to-purple-500/20 bg-[#162441]">
             <Typography.Title level={4} className="!mb-2 text-white">
               What this means for you
             </Typography.Title>
