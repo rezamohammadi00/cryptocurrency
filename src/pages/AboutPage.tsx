@@ -42,7 +42,7 @@ const designPillars = [
 
 const AboutPage = () => {
   return (
-    <Layout.Content className="overflow-y-scroll p-4 w-full h-full bg-[#0f172a] text-white">
+    <Layout.Content className="overflow-y-scroll p-4 w-full h-full bg-[#001529] text-white">
       <div className="max-w-6xl mx-auto space-y-8">
         <header className="space-y-3">
           <Typography.Title className="!mb-0 text-white">About Cryptocurrency</Typography.Title>
@@ -90,7 +90,7 @@ const AboutPage = () => {
               dataSource={guidingPrinciples}
               renderItem={(item) => (
                 <List.Item key={item.title} className="!px-0">
-                  <Typography.Title level={4} className="!mb-1">
+                  <Typography.Title level={4} className="!mb-1 text-white">
                     {item.title}
                   </Typography.Title>
                   <Typography.Paragraph className="!mb-2 text-gray-200">
