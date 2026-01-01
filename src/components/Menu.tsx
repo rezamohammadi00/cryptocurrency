@@ -14,7 +14,7 @@ const dropdownItems: MenuProps["items"] = [
   },
   {
     label: (
-      <Link to="/about" rel="noopener noreferrer">
+      <Link to="/about" rel="noopener noreferrer" data-cy="about-link">
         About
       </Link>
     ),
@@ -68,6 +68,7 @@ const MenuDemo = memo(() => {
 
   return (
     <Menu
+    data-cy="menu-link"
       theme="dark"
       mode="horizontal"
       defaultSelectedKeys={[]}

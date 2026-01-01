@@ -1,0 +1,16 @@
+
+ /*
+  This file tells your editor to prioritize Cypress-specific types 
+  and rules for everything inside your test folder(cypress/e2e) to ensure accurate autocompletion
+  and error checking.
+
+  src: https://docs.cypress.io/app/tooling/IDE-integration#Reference-type-declarations-via-tsconfig
+*/
+
+{
+    "compilerOptions": {
+      "allowJs": true,
+      "types": ["cypress"]
+    },
+    "include": ["**/*.*"]
+  }

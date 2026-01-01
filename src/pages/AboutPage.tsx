@@ -52,7 +52,7 @@ const AboutPage = () => {
           </Typography.Paragraph>
           <div className="flex gap-3 flex-wrap">
             <Button type="primary" size="large" className="bg-blue-500">
-              <Link to="/cryptocurrencies">Browse Cryptocurrencies</Link>
+              <Link to="/cryptocurrencies" data-cy="browse-cryptocurrencies-link">Browse Cryptocurrencies</Link>
             </Button>
             <Button size="large" ghost>
               <Link to="/news">Read Market News</Link>
