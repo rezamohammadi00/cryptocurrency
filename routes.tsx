@@ -6,6 +6,7 @@ const CryptocurrenciesPage = lazy(
   () => import("./src/pages/CryptocurrenciesPage")
 );
 const AboutPage = lazy(() => import("./src/pages/AboutPage"));
+const ContactUsPage = lazy(() => import("./src/pages/ContactUsPage"));
 // const ExchangesPage = lazy(() => import("./src/pages/ExchangesPage"));
 
 const routes = [
@@ -25,10 +26,10 @@ const routes = [
     path: "/about",
     element: <AboutPage />,
   },
-  // {
-  //   path: "/exchanges",
-  //   element: <ExchangesPage />,
-  // },
+  {
+    path: "/contact",
+    element: <ContactUsPage />,
+  }
 ];
 
 export default routes;

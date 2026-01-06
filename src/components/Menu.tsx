@@ -36,6 +36,14 @@ const dropdownItems: MenuProps["items"] = [
     ),
     key: "3",
   },
+  {
+    label: (
+      <Link to="/contact" rel="noopener noreferrer">
+        Contact
+      </Link>
+    ),
+    key: "4",
+  },
 ];
 
 const MenuDemo = memo(() => {

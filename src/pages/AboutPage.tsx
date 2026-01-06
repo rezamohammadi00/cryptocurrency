@@ -98,7 +98,7 @@ const AboutPage = () => {
                   </Typography.Paragraph>
                   <div className="flex gap-2 flex-wrap">
                     {item.tags.map((tag) => (
-                      <Tag key={tag} color="blue">
+                      <Tag key={tag} className="bg-gradient-to-br from-blue-500/30 to-cyan-500/10">
                         {tag}
                       </Tag>
                     ))}

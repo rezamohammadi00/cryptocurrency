@@ -18,6 +18,10 @@ const items: MenuProps["items"] = [
     key: "/about",
     label: <Link to="/about">About</Link>,
   },
+  {
+    key: "/contact",
+    label: <Link to="/contact">Contact</Link>,
+  },
 ];
 
 const Sidebar = () => {

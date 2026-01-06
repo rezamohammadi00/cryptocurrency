@@ -1,10 +1,12 @@
-/// <reference types="cypress" />
-
-
-
-//the convention
+// / <reference types="cypress" /> -> tip: this is used to tell cypress what types of files to use
+// ------------------------------------------------
+//the convention (best practice)
 //describe   feature + scenario
 //it -> test+Namber + brief description
+// ---------------------------------------------
+//takeaway: 
+// describe() -> describe the feature
+// it() -> describe the scenario
 
 describe('navigation scenarios', () => {
   it('Test1 - Navigate to the home page', () => {
